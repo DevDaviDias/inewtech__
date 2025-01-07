@@ -1436,10 +1436,10 @@ footer .container-footer {
      
     }
     .container-contador {
-        width: 30px;
+        width: 100%;
     }
     .ia-agent-item {
-        width: 305px;
+        width:  100%;
         
     }
 
