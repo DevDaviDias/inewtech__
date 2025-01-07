@@ -1,0 +1,1511 @@
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@100..800&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+
+
+}
+
+:root {
+    --header: #1F1A4F;
+    /*Cor de fundo header e body*/
+    --fundo: #34316D;
+    --primary-color: #30004d;
+    /*Cor de fundo*/
+    --color-txt: #996FFA;
+    --branco: #ffffff;
+    /*Branco normal*/
+    --branco-cinza: #ECEAF1;
+    /*cor para textos pequenos*/
+    --cinza-carrossel: #525766;
+    --rosa: #b725d2;
+    --carrossel: #A987F8;
+    --roxo: #3b065d;
+    --roxo-cards: #9b4dca;
+    --cor-shadow: #3D5B8E;
+    --porcentagens: #63bae2;
+    --botaoEntrar: #63bae2;
+    --resultados: #63bae2;
+    --verde-claro: #6EB8CA;
+    --font-sora: font-family: "Sora", sans-serif;
+    --poppins-body: "Poppins", serif 400 normal;
+    --fundo-ai-agents: #EDE9FE;
+
+    /* Fonte para o corpo do texto, geralmente usada no conteúdo principal (ex: parágrafos, textos de artigos) */
+    --font-poppins-body: "Poppins", serif;
+
+    /* Fonte para os subtítulos, pode ser usada em títulos menores ou seções de destaque (ex: h2, h3, etc.) */
+    --font-poppins-subtitulos: "Poppins", serif;
+
+
+    --font-poppins-titulos: "Poppins", serif;
+    /* Fonte para os títulos principais, pode ser usada em títulos de maior destaque (ex: h1) */
+
+    --open-sans-regular: 'Open Sans', sans-serif;
+    --open-sans-light: 'Open Sans', sans-serif;
+    --open-sans-bold: 'Open Sans', sans-serif;
+    --open-sans-paragrafo: 'Open Sans', sans-serif;
+    /* Definição específica para parágrafos */
+    --poppins-regular: 'Poppins', sans-serif;
+    /* Para outros usos como títulos */
+    font-optical-sizing: auto;
+    font-weight: weight;
+    font-style: normal;
+    ;
+
+
+}
+
+body {
+    background-color: var(--header);
+    font-family: var(--poppins-regular);
+}
+
+.header,
+a {
+    text-decoration: none;
+}
+
+.header {
+    padding-inline: 30px;
+    position: fixed;
+    width: 100vw;
+    z-index: 1;
+}
+
+.titulo-logo {
+    color: #5230A8;
+    font-weight: bolder;
+    background: linear-gradient(90deg),
+        var(--nav-color),
+        var(--light-purple);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: bold;
+    font-size: 2rem;
+}
+
+
+.nav {
+    max-width: 1800px;
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    position: fixed;
+    /*Torna o cabeçalho fixo no topo */
+    left: 0;
+    width: 100%;
+    background-color: var(--header);
+    /* Cor principal do header */
+    color: #fff;
+    padding: 15px 0;
+    z-index: 1000;
+    transition: background-color 0.3s ease, backdrop-filter 0.3s ease;
+    /* Transições suaves para a cor e o desfoque */
+}
+
+.nav.scrolled {
+    background-color: var(--header);
+    /* Cor tdo fundo header */
+    backdrop-filter: blur(190px);
+    /* Efeito de desfoque */
+}
+
+.titulo-nav {
+    margin-left: 20px;
+    margin-right: 20px;
+    padding: 10px 30px 10px 30px;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    margin-right: 15px;
+    position: relative;
+    display: inline-block;
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    font-family: var(--open-sans-bold);
+}
+
+.nav-list {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: left;
+}
+
+.nav.active .nav-list {
+    display: block;
+    position: absolute;
+    top: 50px;
+    left: 0;
+    width: 100%;
+    background-color: var(--color-txt);
+    text-align: center;
+    padding: 20px 0;
+}
+
+
+.nav-list ul {
+    background-color: white;
+    color: var(--branco);
+    gap: 10px;
+}
+
+.nav-list li {
+    width: 100%;
+    color: var(--header);
+    font-size: 0.9em;
+    font-weight: 700;
+}
+
+.btn-suporte {
+    display: none;
+    background-color: var(--botaoEntrar);
+    padding: 20px;
+    border-radius: 22px;
+    color: var(--white);
+    margin-right: 1em;
+}
+
+.btn-suporte:hover {
+    background-color: var(--cor-shadow);
+    color: var(--white);
+}
+
+.hamburger {
+    display: block;
+    border: none;
+    background: none;
+    border-top: 3px solid var(--color-txt);
+    cursor: pointer;
+    margin-right: 15px;
+    position: relative;
+    z-index: 1500;
+    /* Garante que o botão fique sobre outros elementos */
+}
+
+.hamburger::before {
+    content: " ";
+    display: block;
+    width: 30px;
+    height: 3px;
+    background: 3px var(--color-txt);
+    margin-top: 5px;
+}
+
+.hamburger::after {
+    content: " ";
+    display: block;
+    width: 30px;
+    height: 3px;
+    background: var(--color-txt);
+    margin-top: 5px;
+    position: relative;
+    transition: 0.7s;
+}
+
+.nav-list::after {
+    background-color: #01e675;
+}
+
+.link-nav {
+    text-decoration: none;
+    /* Remove o sublinhado */
+    font-family: Arial, sans-serif;
+    padding: 10px 20px;
+    padding-bottom: 5px;
+    /* Espaçamento para a linha */
+    position: relative;
+    display: inline-block;
+    font-size: 18px;
+    color: var(--text-color);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+
+.link-nav::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 2px;
+    background-color: var(--primary-color);
+    transform: scaleX(0);
+    transform-origin: bottom right;
+    transition: transform 0.9s ease;
+}
+
+
+.link-nav:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+/*Começo btn whats*/
+.icon {
+    position: fixed;
+    bottom: 60px;
+    right: 30px;
+    font-size: 30px;
+    background-color: #01e675;
+    color: #ffffff;
+    border-radius: 50%;
+    padding: 3px;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    text-decoration: none;
+    z-index: 108;
+    box-shadow: 2px 2px 2px #cebdbd;
+    line-height: 50px;
+}
+
+.icon:hover {
+    background-color: #029e3b;
+    color: #ffffff;
+    font-weight: 900;
+    box-shadow: 2px 2px 20px #cebdbd;
+}
+
+/* Animação de tremor */
+@keyframes tremor {
+    0% {
+        transform: translateX(0);
+    }
+
+    25% {
+        transform: translateX(-5px);
+        /* Move para a esquerda */
+    }
+
+    50% {
+        transform: translateX(5px);
+        /* Move para a direita */
+    }
+
+    75% {
+        transform: translateX(-5px);
+        /* Move para a esquerda novamente */
+    }
+
+    100% {
+        transform: translateX(0);
+        /* Retorna à posição inicial */
+    }
+}
+
+/* Aplicando a animação ao botão */
+.icon.balanco {
+    animation: tremor 0.5s ease-in-out infinite;
+}
+
+
+/*começo Home*/
+.home {
+    background-repeat: no-repeat;
+    background-position: right;
+    background-size: cover;
+    background-color: var(--light-gray);
+    color: var(--branco);
+    text-align: left;
+    padding: 190px 20px 30px 20px;
+}
+
+.container-home {
+    display: flex;
+    flex-direction: column;
+}
+
+.titulo-section {
+    color: white;
+    margin-top: -90px;
+}
+
+.titulo-inew-section {
+    color: var(--color-txt);
+    font-family: var(--font-poppins-titulos);
+}
+
+.txt-section {
+    border: 1px solid #996FFA;
+    margin-top: 20px;
+    border-radius: 30px;
+    width: 300px;
+    padding-inline: 19px;
+    display: block;
+    /* Garante que o container seja um bloco para o texto se comportar como esperado */
+    text-align: left;
+    font-family: var(--open-sans-light);
+    color: var(--branco-cinza);
+}
+
+.txt-span {
+    font-weight: bolder;
+    font-size: 18px;
+    line-height: 1.6;
+    color: var(--color-txt);
+    display: inline;
+    /* Garante que o <span> continue sendo inline */
+    font-weight: bold;
+    white-space: normal;
+    /* Permite que o texto dentro do <span> quebre corretamente */
+}
+
+.span-txt {
+    font-weight: bolder;
+
+}
+
+.h3-section {
+    margin-top: 30px;
+    color: var(--color-txt);
+    width: 400px;
+    text-transform: uppercase;
+    line-height: 1.6;
+    flex-grow: 3;
+    font-family: var(--font-poppins-subtitulos);
+    font-size: 21px;
+
+}
+
+.txt-section-span {
+    margin-top: 30px;
+    font-family: var(--font-poppins-titulos);
+    font-size: 21px;
+    color: var(--branco-cinza);
+}
+
+
+.home h2 {
+    font-size: 48px;
+}
+
+.home .cta-button {
+    background-color: var(--light-purple);
+    color: var(--off-white);
+    padding: 10px 30px;
+    text-decoration: none;
+    font-size: 18px;
+    margin-top: 20px;
+    display: inline-block;
+    border-radius: 5px;
+}
+
+/*fim Home*/
+.sessoes {
+    padding-inline: 1em;
+}
+
+.img-mascote {
+    position: relative;
+}
+
+.img-macote-inew {
+    margin-top: -70px;
+    /* Ajuste o valor conforme necessário */
+}
+
+/*Conatdor */
+
+.container-contador {
+    display: flex;
+    flex-direction: column;
+    /* Organiza os itens na coluna */
+    align-items: center;
+    /* Alinha os itens ao centro horizontalmente */
+    justify-content: center;
+    /* Centraliza os itens verticalmente */
+    height: 140px;
+    /* Altura do contêiner */
+    width: 400px;
+    /* Largura do contêiner */
+    margin: 50px auto;
+    /* Centraliza o contêiner na página */
+    background-color: #acbdc852;
+    border-radius: 15px;
+    border: 3px solid #6148AC;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+    font-family: Arial, sans-serif;
+}
+
+.texto-conatdor {
+    margin: 2px 0;
+    /* Espaço entre as partes */
+    font-size: 1rem;
+    /* Tamanho do texto */
+    color: var(--branco-cinza);
+    /* Cor do texto */
+    text-align: center;
+    /* Alinha o texto ao centro */
+    font-family: var(--open-sans-light);
+
+}
+
+#contador {
+    font-size: 2.5em;
+    /* Tamanho maior para o número */
+    font-weight: bold;
+    /* Deixa o número mais destacado */
+}
+
+.porcentagem {
+    font-weight: 700;
+    font-size: 3em;
+    color: #63bae2;
+}
+
+#contador1 {
+    font-size: 1.8rem;
+}
+
+#contador2 {
+    font-size: 1.8rem;
+}
+
+#contador3 {
+    font-size: 1.8rem;
+}
+
+
+/*Resultados*/
+
+.titulo-resultado {
+    font-family: var(--open-sans-light);
+    text-align: center;
+    margin-top: 2em;
+    color: #63bae2;
+    font-weight: 800;
+    font-size: 1.8rem;
+
+}
+
+.resultados {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+
+}
+
+.texto-conatdor {
+    font-size: 1rem;
+    padding: 4px;
+}
+
+/**botão de chamar para o whats/
+/* Estilo do contêiner */
+.container {
+    display: flex;
+    justify-content: center;
+    /* Centraliza o conteúdo horizontalmente */
+    align-items: center;
+    /* Centraliza o conteúdo verticalmente */
+    height: 100vh;
+    /* Faz com que o contêiner ocupe toda a altura da tela */
+    margin-top: 10px;
+    /* Garante a distância de 10px do topo */
+}
+
+/* Container do botão */
+.button-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    /* Ajuste a margem superior para evitar distância excessiva */
+}
+
+/* Estilo do botão */
+.start-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 20px;
+    font-size: 27px;
+    font-weight: bold;
+    color: white;
+    /* Cor do texto */
+    background-color: var(--cor-shadow);
+    /* Cor do fundo */
+    border-radius: 20px;
+    /* Bordas arredondadas */
+    text-decoration: none;
+    /* Remove sublinhado do link */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    /* Sombra para o botão */
+    transition: all 0.3s ease;
+    /* Transição suave */
+}
+
+/* Seta ao lado direito */
+.arrow {
+    margin-left: 10px;
+    /* Distância entre o texto e a seta */
+    font-size: 20px;
+    /* Tamanho da seta */
+}
+
+/* Efeito hover - Expansão do background */
+.start-button:hover {
+    background-color: var(--carrossel);
+    /* Cor de fundo mais escura ao passar o mouse */
+    transform: scale(1.1);
+    /* Expande o botão */
+    box-shadow: 0 5px 30px rgba(0, 0, 0, 0.2);
+    /* Aumenta a sombra no hover */
+}
+
+/* Efeito ao clicar no botão (clicar para expandir um pouco) */
+.start-button:active {
+    transform: scale(0.95);
+    /* Diminui o botão ao ser pressionado */
+}
+
+/* Perfil e logo */
+.profile {
+    flex: 1;
+    min-width: 250px;
+}
+
+.profile .logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 1rem;
+}
+
+.profile .logo img {
+    width: 40px;
+    height: 40px;
+}
+
+.profile .logo a {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #fff;
+}
+
+.profile p {
+    font-size: 1em;
+    line-height: 1.6;
+    margin-bottom: 0.8em;
+}
+
+.social-media a {
+    margin-right: 10px;
+    display: inline-block;
+    background-color: #191919;
+    padding: 10px;
+    border-radius: 50%;
+    transition: 0.3s;
+}
+
+.social-media a:hover {
+    background-color: #333;
+}
+
+/* Links úteis */
+.links {
+    display: flex;
+    flex: 2;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 2rem;
+    margin-top: 2em;
+}
+
+.links h2 {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+}
+
+.links ul li {
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+    list-style: none;
+}
+
+.links a {
+    color: #bbb;
+    transition: color 0.3s;
+}
+
+.links a:hover {
+    color: #fff;
+}
+
+/* Fim Rodapé */
+.loading-container {
+    position: fixed;
+    /* Fixa o carregamento na tela */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    /* Centraliza o círculo */
+    align-items: center;
+    /* Alinha verticalmente */
+    background-color: var(--header);
+    /*rgba(255, 255, 255, 0.7)/* ; /* Fundo semitransparente */
+    z-index: 9999;
+    /* Garante que o loader fique sobre o conteúdo */
+}
+
+/* Estilo do loader circular */
+.loader {
+    border: 10px solid #f3f3f3;
+    /* Cor de fundo do círculo */
+    border-top: 10px solid #3498db;
+    /* Cor da borda superior (a que será visível) */
+    border-radius: 50%;
+    /* Tornar o loader circular */
+    width: 50px;
+    height: 50px;
+    animation: spin 2s linear infinite;
+    /* Animação de rotação */
+}
+
+/* Definição da animação de rotação */
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+        /* Começa na posição inicial */
+    }
+
+    100% {
+        transform: rotate(360deg);
+        /* Finaliza após uma rotação completa */
+    }
+}
+
+
+
+/* Estilo para o container de carregamento */
+.loading-container {
+    position: fixed;
+    /* Fixa o carregamento na tela */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    /* Centraliza o círculo */
+    align-items: center;
+    /* Alinha verticalmente */
+    background-color: var(--header);
+    /* rgba(255, 255, 255, 0.7);*/
+    /* Fundo semitransparente */
+
+    z-index: 9999;
+    /* Garante que o loader fique sobre o conteúdo */
+}
+
+/* Estilo do loader circular */
+.loader {
+    border: 10px solid #f3f3f3;
+    /* Cor de fundo do círculo */
+    border-top: 10px solid #3498db;
+    /* Cor da borda superior (a que será visível) */
+    border-radius: 50%;
+    /* Tornar o loader circular */
+    width: 50px;
+    height: 50px;
+    animation: spin 2s linear infinite;
+    /* Animação de rotação */
+}
+
+/* Definição da animação de rotação */
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+        /* Começa na posição inicial */
+    }
+
+    100% {
+        transform: rotate(360deg);
+        /* Finaliza após uma rotação completa */
+    }
+}
+
+
+/* Estilo para o container de carregamento */
+.loading-container {
+    position: fixed;
+    /* Fixa o carregamento na tela */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    /* Centraliza o círculo */
+    align-items: center;
+    /* Alinha verticalmente */
+    background-color: var(--header);
+    /*rgba(255, 255, 255, 0.7)*/
+    /* Fundo semitransparente */
+    z-index: 9999;
+    /* Garante que o loader fique sobre o conteúdo */
+}
+
+/* Estilo do loader circular */
+.loader {
+    border: 10px solid #f3f3f3;
+    /* Cor de fundo do círculo */
+    border-top: 10px solid #996FFA;
+    /* Cor da borda superior (a que será visível) */
+    border-radius: 50%;
+    /* Tornar o loader circular */
+    width: 50px;
+    height: 50px;
+    animation: spin 0.7s linear infinite;
+    /* Animação de rotação */
+}
+
+
+
+/* Definição da animação de rotação */
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+        /* Começa na posição inicial */
+    }
+
+    100% {
+        transform: rotate(360deg);
+        /* Finaliza após uma rotação completa */
+    }
+}
+
+/* Se a classe "loading" estiver no body, o loader ficará visível */
+body.loading .loading-container {
+    display: flex;
+}
+
+/* Quando a classe "loading" for removida, o loader será ocultado */
+body:not(.loading) .loading-container {
+    display: none;
+}
+
+/*carrossel*/
+
+/* Contêiner do carrossel (sem fundo) */
+.carrossel-container {
+
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    /* Esconde as partes do carrossel que saem da div */
+    margin: 20px 0;
+    box-shadow: 0 4px 12px rgba(82, 87, 102, 0.5);
+    border: 2px solid #1F1A4F;
+}
+
+
+
+.h3-carrossel {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--branco);
+    font-family: var(--font-poppins-subtitulos);
+    font-size: 1.5rem;
+
+}
+
+/* O carrossel (div que contém os itens) */
+.carrossel {
+    display: flex;
+    width: max-content;
+    /* Ajusta a largura do carrossel de acordo com o conteúdo */
+    animation: rolagem 15s linear infinite;
+    /* Animação para rolar automaticamente */
+
+}
+
+/* Estilo de cada cliente (logo centralizado) */
+.cliente {
+    display: flex;
+    justify-content: center;
+    /* Centraliza horizontalmente */
+    align-items: center;
+    /* Centraliza verticalmente */
+    min-width: 200px;
+    /* Tamanho mínimo dos itens */
+    margin-right: 40px;
+    /* Espaço entre os itens */
+}
+
+.cliente img {
+    width: 100px;
+    /* Tamanho do logo */
+    height: 100px;
+    object-fit: contain;
+}
+
+/* Animação de rolagem contínua */
+@keyframes rolagem {
+    0% {
+        transform: translateX(0);
+        /* Começa do início */
+    }
+
+    100% {
+        transform: translateX(-50%);
+        /* Rola a largura total do carrossel */
+    }
+}
+
+/* Estilo do contêiner */
+.container {
+    display: flex;
+    justify-content: center;
+    /* Centraliza o conteúdo horizontalmente */
+    align-items: center;
+    /* Centraliza o conteúdo verticalmente */
+    height: 50vh;
+    margin-top: 10px;
+    /* Garante a distância de 10px do topo */
+}
+
+/*cards*/
+.cards-section {
+    display: flex;
+
+    flex-direction: column;
+    /* Garante que o título fique em cima e os cards abaixo */
+    gap: 20px;
+    padding: 40px;
+    justify-content: center;
+    /* Centraliza os itens na horizontal */
+    align-items: center;
+    /* Centraliza os itens na vertical */
+    text-align: center;
+    /* Centraliza o texto do título */
+
+
+}
+
+.cards-flex {
+    display: flex;
+    /* Garante que os cards fiquem na horizontal */
+    gap: 20px;
+    justify-content: center;
+    /* Centraliza os cards */
+
+
+}
+
+.cards-flexiveis {
+    display: flex;
+    gap: 20px;
+
+}
+
+.cardflex {
+    flex: 1 1 300px;
+    /* Base de 300px, mas pode crescer ou encolher conforme o espaço */
+    max-width: 300px;
+    /* Define uma largura máxima */
+
+}
+
+.card1,
+.card2,
+.card3 {
+    background-color: var(--header);
+    border-radius: 10px;
+    width: 300px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 0px 20px black;
+    transition: transform 0.3s ease-in-out;
+
+
+}
+
+.h2-cads {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-poppins-subtitulos);
+
+    color: var(--color-txt);
+    font-size: 2rem;
+}
+
+.h3-card-titulo {
+    font-size: 1.4rem;
+    color: var(--color-txt);
+}
+
+.paragrafo-card {
+    color: var(--branco);
+    font-size: 17px;
+}
+
+.card-icon {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 15px;
+}
+
+.card h3 {
+    font-size: 20px;
+    font-weight: 600;
+    font-family: var(--font-poppins-subtitulos);
+    margin-bottom: 15px;
+
+
+}
+
+.card p {
+    font-size: 14px;
+    color: #555;
+    font-family: var(--open-sans-light);
+}
+
+.card1:hover,
+.card2:hover,
+.card3:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+    z-index: 0;
+}
+
+
+/*ai agents*/
+/* Container principal */
+
+
+.ia-agents-flex,
+.ia-agents-flex1 {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+
+.ia-agents {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 40px;
+    gap: 30px;
+}
+
+/* Estilo da lista (ul) */
+.ia-agents-list {
+    /* Remove o padding padrão */
+    margin: 2em 0;
+    /* Remove o margin padrão */
+    list-style-type: none;
+    display: flex;
+    /* Flexbox para centralizar o item */
+    justify-content: center;
+    /* Centraliza o conteúdo horizontalmente */
+    align-items: center;
+    /* Centraliza o conteúdo verticalmente */
+    padding: 20px;
+    border-radius: 10px;
+    /* Bordas arredondadas */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    /* Sombra suave */
+}
+
+/* Estilo do item da lista (li) */
+.ia-agents-item {
+
+    flex: 1 1 300px;
+    /* Base de 300px, mas encolhe e cresce conforme necessário */
+    max-width: 300px;
+    /* Limita a largura máxima */
+    font-size: 1.5rem;
+    /* Tamanho da fonte */
+    font-weight: bold;
+    /* Negrito */
+    color: var(--color-txt);
+    /* Cor do texto */
+    font-family: var(--font-poppins-subtitulos, Arial, sans-serif);
+    /* Fonte (substitua se necessário) */
+    padding: 10px 20px;
+    /* Espaçamento interno */
+    text-align: center;
+    /* Alinha o texto no centro */
+    background-color: var(--fundo-ai-agents);
+    border-radius: 10px;
+    /* Bordas arredondadas */
+    box-shadow: 0 0px 20px rgba(0, 0, 0, 0.1);
+    /* Sombra suave */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    /* Transição para o efeito hover */
+}
+
+/* Efeito hover: eleva o item e aumenta a sombra */
+.ia-agents-item:hover {
+    transform: translateY(-5px);
+    /* Eleva o item ao passar o mouse */
+    box-shadow: 0 0px 20px rgba(0, 0, 0, 0.2);
+    /* Intensifica a sombra */
+}
+
+/* Estilo de cada item */
+.ia-agent-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 400px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Ícones */
+.ia-icon {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 20px;
+
+}
+
+/* Títulos */
+.ia-agent-item h3 {
+    font-size: 1.50rem;
+    color: var(--color-txt);
+    font-family: var(--font-poppins-subtitulos);
+    margin-bottom: 10px;
+}
+
+/* Descrição */
+.ia-agent-item p {
+    font-size: 1.2rem;
+    color: var(--branco);
+    font-family: var(--open-sans-light);
+    line-height: 1.5;
+    margin-bottom: 0;
+}
+
+
+
+/* Card de Depoimento */
+
+
+.depoimento-lista {
+    list-style-type: none;
+    /* Remove o marcador padrão da lista */
+    padding: 0;
+    /* Remove o padding padrão da lista */
+    margin: 0;
+    /* Remove a margem padrão da lista */
+    display: flex;
+    justify-content: center;
+    /* Centraliza horizontalmente */
+    align-items: center;
+    /* Centraliza verticalmente */
+}
+
+.depoimento-item {
+    background-color: var(--fundo-ai-agents);
+    /* Cor de fundo */
+    color: var(--color-txt);
+    /* Cor do texto */
+    font-size: 24px;
+    /* Tamanho da fonte */
+    font-weight: bold;
+    /* Negrito */
+    padding: 15px 30px;
+    /* Reduzido o padding para compactar mais */
+    border-radius: 8px;
+    /* Borda arredondada */
+    box-shadow: 0 0px 20px rgba(0, 0, 0, 0.1);
+    /* Sombra suave */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    /* Transições suaves */
+    margin: 100px 0;
+    /* Pequeno espaço entre os elementos */
+}
+
+/* Efeito de hover - desliza para cima e aumenta a sombra */
+.depoimento-item:hover {
+    transform: translateY(-5px);
+    /* Desliza o item para cima com um movimento mais sutil */
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+    /* Aumenta a sombra ao passar o mouse */
+}
+
+.depoimento {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    background-color: var(--header);
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    position: relative;
+    opacity: 0;
+    transform: translateY(-20px);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.depoimento:hover {
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    /* Efeito de iluminação ao passar o mouse */
+}
+
+.imagem {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-right: 15px;
+}
+
+.imagem img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.texto {
+    flex: 1;
+}
+
+.estrela {
+    font-size: 18px;
+    color: gold;
+    margin-bottom: 10px;
+}
+
+.depoimento-texto {
+    font-size: 16px;
+    color: var(--branco);
+    margin-bottom: 10px;
+}
+
+.nome {
+    font-weight: bold;
+    font-size: 18px;
+    color: var(--color-txt);
+    transition: transform 0.3s ease;
+    /* Efeito para o nome */
+}
+
+.depoimento:hover .nome {
+    transform: translateX(10px);
+    /* Nome abre para o lado ao passar o mouse */
+}
+
+/* Animação de Entrada (quando o usuário chega na parte dos depoimentos) */
+@keyframes slide-up {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Ativar animação quando os cards estiverem visíveis */
+.depoimento.visible {
+    animation: slide-up 0.6s forwards;
+}
+
+/* Estilos para o título */
+.automation-info h3 {
+    font-size: 24px;
+    font-weight: bold;
+    color: var(--color-txt);
+    /* Cor de destaque */
+    margin-bottom: 40px;
+}
+
+/* Estilos para o parágrafo */
+.automation-info p {
+    font-size: 18px;
+    font-family: var(--open-sans-paragrafo);
+    color: var(--branco-cinza);
+    margin-bottom: 30px;
+}
+
+.automation-info h3 {
+    font-size: 34px;
+    font-family: var(--font-poppins-subtitulos);
+    margin-top: 100px;
+    /* Adiciona um pequeno afastamento acima do título */
+}
+
+/* Estilos para o card */
+.card {
+    display: flex;
+    align-items: center;
+    background-color: var(--header);
+    /* Cor roxa */
+    color: white;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 10px;
+    box-shadow: 0 0px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Efeito de hover no card */
+.card:hover {
+    transform: translateY(-5px);
+    /* Levanta o card */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Estilos para o ícone dentro do card */
+.card-icon {
+    width: 50px;
+    height: 50px;
+    margin-right: 20px;
+}
+
+/* Estilos para o texto dentro do card */
+.card-text p {
+    margin: 0;
+    font-size: 16px;
+    font-weight: normal;
+    color: var(--branco);
+    font-family: var(--open-sans-light);
+}
+
+
+.button-end {
+    margin: 70px 0px 20px 0px;
+}
+
+/* Rodapé */
+footer {
+    background-color: var(--background-nav);
+    border-top: 2px solid #333;
+    padding: 2rem 0;
+    color: #fff;
+    display: flex;
+}
+
+footer .container-footer {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 80%;
+    margin: 0 auto;
+    gap: 2rem;
+}
+
+.texto-footer-bottom {
+    text-align: center;
+    color: white;
+    padding: 2em;
+}
+
+
+@media (max-width: 751px) {
+
+    /*começo do header*/
+    .nav-list {
+        position: fixed;
+        top: 80px;
+        left: 0;
+        width: 100vw;
+        background: var(--nav-color);
+        height: 0px;
+        overflow: hidden;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    .nav-list a {
+        font-size: 24px;
+        opacity: 0;
+        transition: opacity 0.5s ease-in-out;
+    }
+
+    .nav-list li:nth-child(1) a {
+        transition-delay: 0.2s;
+    }
+
+    .nav-list li:nth-child(2) a {
+        transition-delay: 0.4s;
+    }
+
+    .nav-list li:nth-child(3) a {
+        transition-delay: 0.6s;
+    }
+
+    .nav.active .nav-list {
+        height: 50vh;
+    }
+
+    .nav.active .nav-list a {
+        opacity: 1;
+    }
+
+    .hamburger {
+        display: block;
+        z-index: 1;
+    }
+
+    .nav.active .hamburger {
+        position: fixed;
+        top: 26px;
+        right: 16px;
+        border-top-color: transparent;
+    }
+
+    .nav.active .hamburger::before {
+        transform: rotate(135deg);
+    }
+
+    .nav.active .hamburger::after {
+        transform: rotate(-135deg);
+        top: -7px;
+    }
+
+    /*Fim do header*/
+    .container-servicos {
+        flex-direction: column;
+    }
+
+    .resultados {
+        flex-direction: column;
+    }
+
+    .container-contador {
+        margin: 1em;
+    }
+
+    .cards-flexiveis {
+        flex-direction: column;
+    }
+
+    /*iA AGENTS*/
+
+    .ia-agent-icon img {
+        width: 40px;
+        /* Reduz o tamanho das imagens */
+        height: 40px;
+    }
+
+    .ia-agent-text h3 {
+        font-size: 1.1rem;
+        /* Reduz o tamanho do título */
+    }
+
+    .ia-agent-text p {
+        font-size: 1rem;
+        /* Reduz o tamanho do parágrafo */
+    }
+
+    .iaagentecollum,
+    .ia-agents-flex,
+    .ia-agents,
+    .ia-agents-flex1 {
+        flex-direction: column;
+    }
+
+    .ia-agents-flex1, .ia-agents-flex {
+        align-items: center;
+    }
+
+
+
+
+}
+
+@media (min-width: 750px) {
+
+    /*Começo do header*/
+    .n.nav-list {
+        display: flex;
+        flex-direction: column;
+        gap: 32px;
+
+    }
+
+    .nav-list a {
+        color: #0f0e0e;
+
+        display: none;
+    }
+
+    .hamburger {
+        display: none
+    }
+
+    .hamburger::before {
+        display: none;
+    }
+
+    .hamburger::after {
+        display: none;
+    }
+
+    .btn-suporte {
+        display: block;
+    }
+
+    .header {
+        padding-left: 80px;
+        padding-right: 200px;
+    }
+
+    .titulo-nav-mobile {
+        display: none;
+        gap: 0px;
+
+    }
+
+
+    /*Fim do header*/
+
+
+}
+
+@media (max-width: 990px) {
+    .cards-flexiveis {
+        flex-direction: column; /* Itens em coluna (um embaixo do outro) */
+        align-items: center; /* Centraliza os itens no centro */
+    }
+
+    .cardflex {
+        width: 100%; /* Ocupa toda a largura disponível */
+        max-width: 300px; /* Define uma largura máxima para cada cartão */
+    }
+}
+
+/* Estiliza a barra de rolagem */
+::-webkit-scrollbar {
+    width: 18px; 
+    background-color: var(--fundo); 
+  }
+  
+  /* Estiliza a parte interna (polegar) */
+  ::-webkit-scrollbar-thumb {
+    background-color: var(--color-txt); 
+    border-radius: 5px; 
+  }
+  
+  /* Adiciona efeito ao passar o mouse */
+  ::-webkit-scrollbar-thumb:hover {
+    background-color: var(--carrossel); /* Cor do polegar ao passar o mouse */
+  }
