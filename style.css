@@ -1424,6 +1424,12 @@ footer .container-footer {
     .h3-section {
         width: 300px;
     }
+    .carrossel {
+        display: flex;
+        width: 100%;
+        animation: rolagem 11s linear infinite;
+    
+    }
 
 
 
