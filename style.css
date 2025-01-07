@@ -1425,10 +1425,10 @@ footer .container-footer {
         width: 300px;
     }
     .carrossel {
-        display: flex;
         width: 100%;
-        animation: rolagem 11s linear infinite;
-    
+    }
+    .home {
+        padding: 190px 5px 30px 5px;
     }
 
 
