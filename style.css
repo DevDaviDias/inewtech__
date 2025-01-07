@@ -1431,7 +1431,17 @@ footer .container-footer {
     .cards-section {
         padding: 40px 0px 40px 0px;
     }
-
+    .nav {
+        width: 100%;
+     
+    }
+    .container-contador {
+        width: 30px;
+    }
+    .ia-agent-item {
+        width: 305px;
+        
+    }
 
 
 }
