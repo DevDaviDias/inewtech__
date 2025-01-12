@@ -48,10 +48,16 @@
                 </div>
             </button>
             <ul class="nav-list">
-                <li class="titulo-nav titulo-nav-mobile"><a class="link-nav" href="#home">Home</a></li>
-                <li class="titulo-nav titulo-nav-mobile"><a class="link-nav" href="#sobre">Sobre</a></li>
-                <li class="titulo-nav titulo-nav-mobile"><a class="link-nav" href="#serviços">Serviços</a></li>
-                <li class="titulo-nav titulo-nav-mobile"><a class="link-nav" href="#footer">Contatos</a></li>
+                <li><a class="link-nav" href="#home">Home</a></li>
+                <li><a class="link-nav" href="#sobre">Sobre</a></li>
+                <li><a class="link-nav" href="#serviços">Serviços</a></li>
+                <li><a class="link-nav" href="#footer">Contatos</a></li>
+                <li>
+                    <label class="theme-toggle ">
+                        <input type="checkbox" class="theme-checkbox" id="chk">
+                        <span class="slider"></span>
+                    </label>
+                </li>
             </ul>
             <!--<button class="btn-suporte"><a href="https://platform.inewtech.tech/auth/login">Entrar</a></button>-->
         </nav>
@@ -526,6 +532,16 @@
 
         // Ativar o tremor a cada 2 segundos (2000ms)
         setInterval(ativarTremor, 4000);  // 2000ms = 4 segundos
+
+
+        //tema escuro
+        const chk = document.getElementById('chk');
+
+        chk.addEventListener('change', () => {
+            document.body.classList.toggle('dark');
+        })
+
+
     </script>
 </body>
 

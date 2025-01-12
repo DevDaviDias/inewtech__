@@ -70,17 +70,6 @@ a {
     z-index: 1;
 }
 
-.titulo-logo {
-    color: #5230A8;
-    font-weight: bolder;
-    background: linear-gradient(90deg),
-        var(--nav-color),
-        var(--light-purple);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    font-weight: bold;
-    font-size: 2rem;
-}
 
 
 .nav {
@@ -111,23 +100,6 @@ a {
     /* Efeito de desfoque */
 }
 
-.titulo-nav {
-    margin-left: 20px;
-    margin-right: 20px;
-    padding: 10px 30px 10px 30px;
-    border-radius: 5px;
-    cursor: pointer;
-    text-decoration: none;
-    display: inline-block;
-    margin-right: 15px;
-    position: relative;
-    display: inline-block;
-    font-size: 24px;
-    font-weight: bold;
-    color: #333;
-    font-family: var(--open-sans-bold);
-}
-
 .nav-list {
     display: flex;
     flex-direction: column;
@@ -149,18 +121,15 @@ a {
 }
 
 
-.nav-list ul {
-    background-color: white;
-    color: var(--branco);
-    gap: 10px;
-}
-
 .nav-list li {
     width: 100%;
     color: var(--header);
-    font-size: 0.9em;
+    font-size: 0.6em;
     font-weight: 700;
+    padding-top: 1em;
 }
+
+
 
 .btn-suporte {
     display: none;
@@ -1315,19 +1284,21 @@ footer .container-footer {
 
 @media (max-width: 751px) {
 
+    
+
     /*começo do header*/
     .nav-list {
         position: fixed;
         top: 80px;
         left: 0;
         width: 100vw;
-        background: var(--nav-color);
         height: 0px;
         overflow: hidden;
         flex-direction: column;
         justify-content: space-around;
         align-items: center;
     }
+    
 
     .nav-list a {
         font-size: 24px;
@@ -1442,6 +1413,9 @@ footer .container-footer {
         width:  100%;
         
     }
+    
+
+   
 
 
 }
@@ -1458,7 +1432,6 @@ footer .container-footer {
 
     .nav-list a {
         color: #0f0e0e;
-
         display: none;
     }
 
@@ -1486,14 +1459,26 @@ footer .container-footer {
     .titulo-nav-mobile {
         display: none;
         gap: 0px;
+    }
 
+    /*botao tem escuro*/
+    .theme-checkbox + .slider {
+        background-color: var(--header);
+        display: none;
     }
     
-
-
+    /* Quando o checkbox estiver marcado, altera o fundo e a posição do círculo */
+    .theme-checkbox:checked + .slider {
+        background-color: var(--carrossel);
+        display: none;
+    }
+    
+    .theme-checkbox:checked + .slider::before {
+        transform: translateX(30px);
+        display: none;
+    }
+    
     /*Fim do header*/
-
-
 }
 
 @media (max-width: 990px) {
@@ -1506,6 +1491,8 @@ footer .container-footer {
         width: 100%; /* Ocupa toda a largura disponível */
         max-width: 300px; /* Define uma largura máxima para cada cartão */
     }
+   
+    
 }
 
 /* Estiliza a barra de rolagem */
@@ -1533,3 +1520,79 @@ footer .container-footer {
     padding: 10px; /* Padding para melhorar o visual */
     border-radius: 5px; /* Borda arredondada */
 }
+
+
+
+/* Tema Escuro */
+.dark {
+    background-color: #121212;
+    
+}
+
+.dark  body{
+    background-color: #121212;
+   
+}
+.dark nav{
+    background-color: #121212;
+    
+}
+
+.dark .nav .nav.active{
+    background-color: #121212;
+}
+
+
+/* Estilo do checkbox oculto */
+.theme-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.theme-checkbox {
+    display: none;
+}
+
+/* Estilo do botão deslizante */
+.slider {
+    position: relative;
+    width: 50px;
+    height: 25px;
+    background-color: #ccc;
+    border-radius: 30px;
+    transition: background-color 0.3s;
+}
+
+.slider::before {
+    content: "";
+    position: absolute;
+    left: 3px;
+    top: 3px;
+    width: 18px;
+    height: 20px;
+    background-color: white;
+    border-radius: 50%;
+    transition: transform 0.3s;
+}
+
+.theme-checkbox + .slider {
+    background-color: var(--header);
+    
+}
+
+/* Quando o checkbox estiver marcado, altera o fundo e a posição do círculo */
+.theme-checkbox:checked + .slider {
+    background-color: var(--carrossel);
+    
+}
+
+.theme-checkbox:checked + .slider::before {
+    transform: translateX(30px);
+    
+}
+
+
+
+
