@@ -107,7 +107,10 @@ a {
     padding: 0;
     margin: 0;
     text-align: left;
+    border-radius: 0.8em;
+    box-shadow: 1px solid rgba(0, 0, 0, 0.345);
 }
+
 
 .nav.active .nav-list {
     display: block;
@@ -126,8 +129,13 @@ a {
     color: var(--header);
     font-size: 0.6em;
     font-weight: 700;
-    padding-top: 1em;
+    padding-top: 1.5em;
 }
+.i {
+    color: #ffffff; /* Branco */
+    font-size: 8rem; /* Tamanho do ícone */
+  }
+
 
 
 
@@ -184,8 +192,24 @@ a {
 .link-nav {
     text-decoration: none;
     /* Remove o sublinhado */
-    font-family: Arial, sans-serif;
+    font-family: sans-serif, sans-serif;
     padding: 10px 20px;
+    padding-top: 0.5em;
+    padding-bottom: 5px;
+    /* Espaçamento para a linha */
+    position: relative;
+    display: inline-block;
+    font-size: 18px;
+    color: var(--text-color);
+    text-decoration: none;
+    font-weight: 500;
+}
+.link-na {
+    
+    /* Remove o sublinhado */
+    font-family: sans-serif, sans-serif;
+    padding: 10px 20px;
+    padding-top: 0.5em;
     padding-bottom: 5px;
     /* Espaçamento para a linha */
     position: relative;
@@ -1578,13 +1602,13 @@ footer .container-footer {
 }
 
 .theme-checkbox + .slider {
-    background-color: var(--header);
+    background-color: var(--carrossel);
     
 }
 
 /* Quando o checkbox estiver marcado, altera o fundo e a posição do círculo */
 .theme-checkbox:checked + .slider {
-    background-color: var(--carrossel);
+    background-color: var(--header);
     
 }
 
