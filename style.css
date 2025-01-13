@@ -118,7 +118,10 @@ a {
     top: 50px;
     left: 0;
     width: 100%;
-    background-color: var(--color-txt);
+    background: url(./assets/images/wave_background.jpg);
+    background-attachment: fixed; 
+    background-size: cover;
+    background-position: center;
     text-align: left;
     padding: 20px 0;
 }
@@ -1586,7 +1589,7 @@ footer .container-footer {
     position: relative;
     width: 45px;
     height: 22px;
-    background-color: #ccc;
+    background-color: var(--header);
     border-radius: 30px;
     transition: background-color 0.3s;
 }
