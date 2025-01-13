@@ -1324,8 +1324,10 @@ footer .container-footer {
     
 
     .nav-list a {
-        font-size: 14px;
+        font-size: 24px;
         opacity: 0;
+        margin-top: 0.4em;
+        margin-bottom: 0.8em;
         transition: opacity 0.5s ease-in-out;
     }
 
@@ -1582,8 +1584,8 @@ footer .container-footer {
 /* Estilo do botão deslizante */
 .slider {
     position: relative;
-    width: 50px;
-    height: 25px;
+    width: 45px;
+    height: 22px;
     background-color: #ccc;
     border-radius: 30px;
     transition: background-color 0.3s;
@@ -1592,10 +1594,10 @@ footer .container-footer {
 .slider::before {
     content: "";
     position: absolute;
-    left: 3px;
-    top: 3px;
-    width: 18px;
-    height: 20px;
+    left: 2.8px;
+    top: 2.8px;
+    width: 16px;
+    height: 18px;
     background-color: white;
     border-radius: 50%;
     transition: transform 0.3s;
@@ -1613,7 +1615,7 @@ footer .container-footer {
 }
 
 .theme-checkbox:checked + .slider::before {
-    transform: translateX(30px);
+    transform: translateX(28px);
     
 }
 
